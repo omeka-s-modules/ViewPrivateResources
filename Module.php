@@ -9,6 +9,21 @@ use Laminas\View\Renderer\PhpRenderer;
 
 class Module extends AbstractModule
 {
+    public function getConfig()
+    {
+        return [
+            'translator' => [
+                'translation_file_patterns' => [
+                    [
+                        'type' => 'gettext',
+                        'base_dir' => sprintf('%s/../language', __DIR__),
+                        'pattern' => '%s.mo',
+                    ],
+                ],
+            ],
+        ];
+    }
+
     public function onBootstrap(MvcEvent $event)
     {
         parent::onBootstrap($event);
@@ -40,7 +55,7 @@ class Module extends AbstractModule
             'type' => Form\Element\Checkbox::class,
             'name' => 'view_private_resources_researcher',
             'options' => [
-                'label' => 'Allow researchers to view private resources',
+                'label' => 'Allow researchers to view private resources', // @translate
             ],
             'attributes' => [
                 'value' => (bool) $settings->get('view_private_resources_researcher', 0),
@@ -50,7 +65,7 @@ class Module extends AbstractModule
             'type' => Form\Element\Checkbox::class,
             'name' => 'view_private_resources_author',
             'options' => [
-                'label' => 'Allow authors to view private resources',
+                'label' => 'Allow authors to view private resources', // @translate
             ],
             'attributes' => [
                 'value' => (bool) $settings->get('view_private_resources_author', 0),

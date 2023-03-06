@@ -1,0 +1,14 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: Module.php:58
+msgid "Allow researchers to view private resources"
+msgstr ""
+
+#: Module.php:68
+msgid "Allow authors to view private resources"
+msgstr ""
